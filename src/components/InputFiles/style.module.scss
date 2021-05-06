@@ -25,4 +25,25 @@
     color: green;
     font-size: 1.4rem;
   }
+
+
+  .buttons{
+    
+    button {
+      background: blue;
+      color: white;
+      margin-left: 1rem;;
+  
+    &.remove{
+      background: red;
+    }
+
+    &.generate{
+      background: green;
+    }
+  }
+
+  }
+
+
 }
