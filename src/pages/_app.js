@@ -1,5 +1,6 @@
 import React from "react";
 import { InputFiles } from "../components/InputFiles";
+import { DownloadFiles } from "../components/DownloadFiles";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -9,6 +10,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
       <InputFiles />
+      <DownloadFiles/>
     </div>
   );
 }
