@@ -14,3 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.home-container{
+  float: left;
+  width: 78%;
+  height: 50rem;
+  
+}

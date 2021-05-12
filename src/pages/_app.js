@@ -6,7 +6,7 @@ import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <div>
+      <div className="home-container">
         <Component {...pageProps} />
       </div>
       <InputFiles />
