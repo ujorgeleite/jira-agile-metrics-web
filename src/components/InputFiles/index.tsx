@@ -24,6 +24,21 @@ export function InputFiles() {
     setRefresh(!refresh)
   }
 
+  const showFiles = (files) => {
+
+    if(!files || files.length===0){
+      return <p>Nenhum arquivo</p>
+    }else{
+      return files.map((file, index) => {
+        return (<li key={index}>
+          <FaFileExcel className={styles.icon} />
+          {file.name}
+        </li>)
+      })
+    }
+
+  }
+
   useEffect(() => {
     getFiles()
   }, [refresh])
@@ -33,12 +48,7 @@ export function InputFiles() {
       <p>Arquivos enviados</p>
       <ul>
         {
-          files.map((file, index) => {
-            return (<li key={index}>
-              <FaFileExcel className={styles.icon} />
-              {file.name}
-            </li>)
-          })
+          showFiles(files)
         }
       </ul>
       <div className={styles.buttons}>
