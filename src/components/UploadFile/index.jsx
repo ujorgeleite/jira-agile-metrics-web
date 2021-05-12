@@ -7,12 +7,15 @@ export function UploadFile() {
 
 
   const sendFile = async (event) => {
+    event.preventDefault();
     const formData = new FormData();
     const file = event.target.file.files[0]
-    formData.append('fileName', event.target.name.value)
+    const fileName = event.target.name.value
+    formData.append('fileName', fileName)
     formData.append('uploadFile', file)
 
-    const result = await api.post('Upload', formData)
+    await api.post('Upload', formData)
+    alert(`Arquivo ${fileName} enviado com sucesso!`)
   }
 
   return (
