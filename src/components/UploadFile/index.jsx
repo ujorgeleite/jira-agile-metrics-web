@@ -1,9 +1,11 @@
 
+import { useFileContext } from '../../context/FileContext'
 import { api } from '../../services/api'
 
 import styles from './style.module.scss'
 
 export function UploadFile() {
+  const { refresh, refreshPage } = useFileContext()
 
 
   const sendFile = async (event) => {
@@ -15,6 +17,7 @@ export function UploadFile() {
     formData.append('uploadFile', file)
 
     await api.post('Upload', formData)
+    refreshPage()
     alert(`Arquivo ${fileName} enviado com sucesso!`)
   }
 

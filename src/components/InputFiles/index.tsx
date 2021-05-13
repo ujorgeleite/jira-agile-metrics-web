@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { FaFileExcel } from 'react-icons/fa';
+import { useFileContext } from '../../context/FileContext';
 
 import { api } from '../../services/api'
 
@@ -7,7 +8,7 @@ import styles from "./style.module.scss"
 
 export function InputFiles() {
   const [files, setFiles] = useState([String])
-  const [refresh, setRefresh] = useState(false)
+  const { refresh, refreshPage } = useFileContext()
 
   const getFiles = async () => {
     const { data } = await api.get('List');
@@ -15,28 +16,27 @@ export function InputFiles() {
   }
 
   const generateFiles = async () => {
-    await api.post('/Process')
-    setRefresh(!refresh)
+     api.post('/Process')
+    refreshPage()
   }
 
   const removeFiles = async () => {
     await api.delete('/Delete')
-    setRefresh(!refresh)
+    refreshPage()
   }
 
   const showFiles = (files) => {
 
-    if(!files || files.length===0){
+    if (!files || files.length === 0) {
       return <p>Nenhum arquivo</p>
-    }else{
-      return files.map((file, index) => {
-        return (<li key={index}>
-          <FaFileExcel className={styles.icon} />
-          {file.name}
-        </li>)
-      })
     }
-
+    return files.map((file, index) => {
+      return (
+      <li key={index}>
+        <FaFileExcel className={styles.icon} />
+        {file.name}
+      </li>)
+    })
   }
 
   useEffect(() => {
