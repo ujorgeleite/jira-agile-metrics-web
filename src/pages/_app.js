@@ -9,12 +9,18 @@ function MyApp({ Component, pageProps }) {
   return (
     <FileContextProvider>
       <div>
-        <h1>Jira Agile Metrics</h1>
+        <header>
+          <h1>Jira Agile Metrics </h1>
+        </header>
         <div className="home-container">
           <Component {...pageProps} />
         </div>
-        <InputFiles />
-        <DownloadFiles />
+        <div className="home-list">
+          <div className="home-list__container">
+            <InputFiles />
+            <DownloadFiles />
+          </div>
+        </div>
       </div>
     </FileContextProvider>
   );
