@@ -24,18 +24,17 @@ export function UploadFile() {
   return (
     <div className={styles.uploadContainer}>
       <form onSubmit={sendFile}>
-        <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" autoComplete="name" required />
-        </div>
-        <div>
-          <div>
-            <label htmlFor="File">
-              File Name:
-          <input type="file" id="file" name="fileUpload" required />
-            </label>
+        <div className={styles.formContainer}>
+          <label htmlFor="name">Name:</label><br/>
+          <input className={styles.formContainer__nameInput} type="text" id="name" autoComplete="name" placeholder="Digite o nome do arquivo"required /><br/>
+         
+          <label className={styles.formContainer__fileName} htmlFor="File"><br/>
+          <span >File Name:</span> <br/> 
+          <input  type="file" id="file" name="fileUpload" required />
+          </label><br/>
+          <div className={styles.formContainer__btn}>
+          <button className={styles.btnEnviar} type="submit">Enviar</button>
           </div>
-          <button type="submit">Enviar</button>
         </div>
       </form>
     </div>

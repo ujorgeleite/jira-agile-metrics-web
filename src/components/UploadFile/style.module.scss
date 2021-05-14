@@ -1,21 +1,82 @@
 .uploadContainer{
-  width: 30rem;
-  height: 20rem;
-  position: absolute; 
-  margin-top: 0.5rem;
-  left: 0; 
-  right: 0; 
-  margin-left: auto; 
-  margin-right: auto; 
-
+  background-color: #22223b;
+  height: 400px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 1em rgb(49, 49, 49);
+ 
   label{
-    padding-right: 0.5rem;
+    color: white;
+    font-size: 13pt;
+    text-align: left;
+    margin-bottom: 5px;
+   
+   
   }
-
+ 
   input{
-    margin-bottom: 1rem;
-    padding-left: 0.5rem;
+       cursor: pointer;
+    text-align: center;
+    padding: 5px 0px;
+ 
   }
-
-
-}
+ }
+ 
+ .formContainer{
+   display: flex;
+   justify-content:start;
+   align-content: space-around;
+   flex-wrap: wrap;
+   width: 250px;
+   height: 200px;
+   
+   
+   &__nameInput{
+     border: 1px solid rgb(34, 34, 228);
+     background-color: rgb(255, 247, 255);
+     height: 40px;
+     width: 250px;
+     border-radius: 8px;
+     cursor: text;
+     
+     &:hover{
+       cursor: text;
+     }
+     &:focus{
+       box-shadow: 0 0 1em rgb(48, 48, 238);
+     }
+   }
+ 
+   &__fileName{
+     padding: 5px 0px;
+   }
+   &__btn{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+   }
+ 
+ }
+ 
+ .btnEnviar{
+   color: white;
+   border: none;
+   border-radius: 8px;
+   background-color: rgb(69, 69, 211);
+   width: 100px;
+   height: 35px;
+   margin-top: 30px;
+   
+ }
+ 
+ .btnEnviar:hover{
+   
+   cursor: pointer;
+   background-color: rgb(31, 141, 31);
+   
+ }
