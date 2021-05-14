@@ -28,7 +28,7 @@ export function InputFiles() {
   const showFiles = (files) => {
 
     if (!files || files.length === 0) {
-      return <p>Nenhum arquivo</p>
+      return <p className={styles.InputList__alert}>Nenhum arquivo</p>
     }
     return files.map((file, index) => {
       return (
@@ -44,14 +44,18 @@ export function InputFiles() {
   }, [refresh])
 
   return (
-    <div className={styles.InputList}>
-      <p>Arquivos enviados</p>
-      <ul>
-        {
-          showFiles(files)
-        }
-      </ul>
-      <div className={styles.buttons}>
+    <div>
+      <div className={styles.InputList}>
+        <div className={styles.InputList__titulo} >
+          <span >Arquivos enviados</span>
+        </div>
+        <ul>
+          {
+            showFiles(files)
+          }
+        </ul>
+      </div>
+      <div className={styles.InputList__btn}>
         <button className={styles.generate} type="button" onClick={generateFiles}>Gerar Arquivos</button>
         <button className={styles.remove} type="button" onClick={removeFiles}>Remover Arquivos</button>
       </div>

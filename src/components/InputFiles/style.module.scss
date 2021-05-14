@@ -1,50 +1,81 @@
 .InputList {
-  max-width: 30%;
-  text-align: left;
-  margin-left: 78%;
-  background: #d8d6d6;
-  padding: 0.4rem;
+  width: 100%;
+  height: 300px;
+  background: #22223b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 1em rgb(49, 49, 49);
+  margin-top: 15px;
 
-  p {
+  &__titulo{
+    color: white;
     font-size: 1.2rem;
-    font-weight: 500;
-    padding-left: 0.3rem;
+    margin-top: 5px;
   }
 
+  &__alert{
+    color: rgb(255, 129, 129);
+  }
+  
   ul {
-    text-align: left;
+    height: 85%;
+    width: 100%;
+    text-overflow: clip;
+    overflow-y: auto;
     li {
       list-style: none;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      font-size:1.2rem;
       font-weight: 500;
-      margin-bottom: 0.4rem;
+      color: #f2e9e4;
+      border-top: 1px solid #f2e9e4;
+      padding: 15px;
     }
   }
+}
 
-  svg {
-    color: green;
-    font-size: 1.4rem;
-  }
+.InputList__btn{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+}
 
+.generate{
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(24, 122, 42);
+  width: 120px;
+  height: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 1em rgb(49, 49, 49);
+}
 
-  .buttons{
-    
-    button {
-      background: blue;
-      color: white;
-      margin-left: 1rem;;
+.generate:hover{
+  color: white;
+  background-color: rgb(12, 185, 44);
   
-    &.remove{
-      background: red;
-    }
+}
+.remove{
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(163, 27, 27);
+  width: 120px;
+  height: 40px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 1em rgb(49, 49, 49);
+}
 
-    &.generate{
-      background: green;
-    }
-  }
-
-  }
-
-
+.remove:hover{
+  background-color: rgb(255, 7, 7);
 }
