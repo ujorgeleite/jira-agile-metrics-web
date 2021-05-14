@@ -31,7 +31,7 @@ export function DownloadFiles() {
 
   const showFiles = (files) => {
     if(!files || files.length ==0 ){
-      return <p>Nenhum arquivo</p>
+      return <p className={styles.DownloadList__alert}>Nenhum arquivo</p>
     }else{
       return files.map((file, index) => {
         return (
@@ -51,8 +51,9 @@ export function DownloadFiles() {
   }, [refresh])
   return (
     <div className={styles.DownloadList}>
-      <p>Arquivos para Download</p>
+      <span className={styles.DownloadList__titulo}>Arquivos para Download</span>
       <ul>
+     
         {
           showFiles(files)
         }
