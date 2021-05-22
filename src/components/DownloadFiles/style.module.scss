@@ -21,6 +21,7 @@
 
   &__alert{
     color: rgb(255, 129, 129);
+    text-align: center;
   }
   
   ul {
@@ -28,6 +29,7 @@
     width: 100%;
     text-overflow: clip;
     overflow-y: auto;
+    text-align: start;
     
     li {
       list-style: none;
@@ -42,16 +44,17 @@
   
   svg {
     color: green;
-    margin-right: 0.3rem;
-    font-size: 1.4rem;
+    font-size:1.4rem;
+    margin-right: 10px;
   }
   
   button{
     background: transparent;
     border: none;
     cursor: pointer;
-    margin-bottom: 0.9rem;
-    
+    font-size:1.2rem;
+    color: white;
+        
     &:hover{
       cursor: pointer;
       color: green;
