@@ -8,7 +8,7 @@ import styles from "./style.module.scss"
 
 export function InputFiles() {
   const [files, setFiles] = useState([String])
-  const { refresh, refreshPage } = useFileContext()
+  const { refresh, refreshPage, isLoadingPage } = useFileContext()
 
   const getFiles = async () => {
     const { data } = await api.get('List');
@@ -16,8 +16,11 @@ export function InputFiles() {
   }
 
   const generateFiles = async () => {
-     api.post('/Process')
-    refreshPage()
+    isLoadingPage(true)
+    const { data } = await api.post('/Process')
+    setTimeout(() => {
+      refreshPage()
+    }, data * 1000);
   }
 
   const removeFiles = async () => {
@@ -28,14 +31,16 @@ export function InputFiles() {
   const showFiles = (files) => {
 
     if (!files || files.length === 0) {
-      return <p>Nenhum arquivo</p>
+      return <p className={styles.InputList__alert}>Nenhum arquivo</p>
     }
     return files.map((file, index) => {
       return (
-      <li key={index}>
-        <FaFileExcel className={styles.icon} />
-        {file.name}
-      </li>)
+        <li key={index}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-square-fill" viewBox="0 0 16 16">
+            <path d="M2 16a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2zm6.5-4.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 1 0z" />
+          </svg>
+          {file.name}
+        </li>)
     })
   }
 
@@ -44,14 +49,18 @@ export function InputFiles() {
   }, [refresh])
 
   return (
-    <div className={styles.InputList}>
-      <p>Arquivos enviados</p>
-      <ul>
-        {
-          showFiles(files)
-        }
-      </ul>
-      <div className={styles.buttons}>
+    <div>
+      <div className={styles.InputList}>
+        <div className={styles.InputList__titulo} >
+          <span>Arquivos enviados</span>
+        </div>
+        <ul>
+          {
+            showFiles(files)
+          }
+        </ul>
+      </div>
+      <div className={styles.InputList__btn}>
         <button className={styles.generate} type="button" onClick={generateFiles}>Gerar Arquivos</button>
         <button className={styles.remove} type="button" onClick={removeFiles}>Remover Arquivos</button>
       </div>
