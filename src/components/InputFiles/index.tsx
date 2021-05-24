@@ -20,7 +20,7 @@ export function InputFiles() {
     const { data } = await api.post('/Process')
     setTimeout(() => {
       refreshPage()
-    }, (data+15) * 1000);
+    }, (data+data) * 1000);
   }
 
   const removeFiles = async () => {
