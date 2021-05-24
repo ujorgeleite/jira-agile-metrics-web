@@ -1,7 +1,6 @@
 
 
 import { useState, useEffect } from 'react'
-import { FaFileExcel } from 'react-icons/fa';
 import fileDownload from 'js-file-download'
 
 import { useFileContext } from '../../context/FileContext';
@@ -15,11 +14,12 @@ type File = {
 
 export function DownloadFiles() {
   const [files, setFiles] = useState<File[]>([])
-  const { refresh } = useFileContext()
+  const { refresh, isLoading, isLoadingPage } = useFileContext()
 
   const getDownloadFiles = async () => {
     const { data }: { data: File[] } = await api.get('/Download/List')
-    return setFiles(data);
+    setFiles(data);
+    isLoadingPage(false)
   }
 
   const downloadFile = async ({ currentTarget: { name } }) => {
@@ -30,6 +30,10 @@ export function DownloadFiles() {
   }
 
   const showFiles = (files) => {
+    if (isLoading) {
+      return <p className={styles.DownloadList__alert}>Os arquivos serão carregados em breve  , aguarde.</p>
+    }
+
     if (!files || files.length == 0) {
       return <p className={styles.DownloadList__alert}>Nenhum arquivo</p>
     } else {
@@ -47,9 +51,10 @@ export function DownloadFiles() {
     }
   }
 
+
+
   useEffect(() => {
     getDownloadFiles()
-
   }, [refresh])
   return (
     <div className={styles.DownloadList}>

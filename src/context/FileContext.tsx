@@ -9,7 +9,10 @@ import {
 type FileContextData = {
   refresh: boolean,
   isLoading: boolean,
+  loaderCounter: number,
+  loaderCounting: number,
   refreshPage: () => void,
+  startLoaderCounting: (value) => void,
   isLoadingPage: (state: boolean) => void
 }
 
@@ -23,9 +26,15 @@ type FileContextProviderProps = {
 export function FileContextProvider({ children }: FileContextProviderProps) {
   const [refresh, setRefresh] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [loaderCounter, setLoaderCounter] = useState<number>(0)
+  const [loaderCounting, setLoaderCounting] = useState<number>(0)
 
   function refreshPage() {
     setRefresh(!refresh)
+  }
+
+  function startLoaderCounting(value: number) {
+    setLoaderCounter(value)
   }
 
   function isLoadingPage(state: boolean) {
@@ -39,7 +48,10 @@ export function FileContextProvider({ children }: FileContextProviderProps) {
         refresh,
         isLoading,
         refreshPage,
-        isLoadingPage
+        loaderCounter,
+        loaderCounting,
+        isLoadingPage,
+        startLoaderCounting
       }}>{children}</FileContext.Provider>
   )
 }

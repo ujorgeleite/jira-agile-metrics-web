@@ -8,7 +8,7 @@ import styles from "./style.module.scss"
 
 export function InputFiles() {
   const [files, setFiles] = useState([String])
-  const { refresh, refreshPage } = useFileContext()
+  const { refresh, refreshPage, isLoadingPage } = useFileContext()
 
   const getFiles = async () => {
     const { data } = await api.get('List');
@@ -16,8 +16,11 @@ export function InputFiles() {
   }
 
   const generateFiles = async () => {
-    api.post('/Process')
-    refreshPage()
+    isLoadingPage(true)
+    const { data } = await api.post('/Process')
+    setTimeout(() => {
+      refreshPage()
+    }, data * 1000);
   }
 
   const removeFiles = async () => {
@@ -49,7 +52,7 @@ export function InputFiles() {
     <div>
       <div className={styles.InputList}>
         <div className={styles.InputList__titulo} >
-          <span >Arquivos enviados</span>
+          <span>Arquivos enviados</span>
         </div>
         <ul>
           {
