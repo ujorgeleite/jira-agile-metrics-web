@@ -1,37 +1,69 @@
-## Welcome to GitHub Pages
+## jira-agile-metrics
 
-You can use the [editor on GitHub](https://github.com/ujorgeleite/jira-agile-metrics-web/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Essa é uma ferramenta pensada para ajudar pessoas entusiastas sobre métricas ágeis de desenvolvimento de software, foi identificado que no dia a dia, nós que fazemos parte do eco-sistema de desenvolvimento de software e utilizamos a ferramenta JIRA, sempre temos algumas dificuldades de acesso a informações consolidadas de forma prática e gratuita, pensando nisso, visamos facilitar suas analises e apresentações, abstraindo a complexidade burocrática e apoiando na geração de gráfico úteis,
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## **Funções habilitadas na ferramenta**
 
-```markdown
-Syntax highlighted code block
+- Extração de planilha com gráfico detalhado de leadtime.
+- Extração de planilha com gráfico detalhado de throughput.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+## **Passo a passo**
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
+- Abra a ferramenta Jira e selecione filtros avançados conforme na imagem
+![](Images/jira_1.png)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- Selecione a dropdown de Columns(Colunas) conforme imagem abaixo
+![](Images/jira_2.png)
+![](Images/jira_3.png)
 
-### Jekyll Themes
+**Na dropdown selecione todos os itens listados abaixo**
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ujorgeleite/jira-agile-metrics-web/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+-Created
+-Issue Type
+-Key
+-Labels
+-Project
+-Start date
+-Status
+-Updated
 
-### Support or Contact
+- Coloque um filtro na busca pelos dados do projetos que vocês gostaria de exportar os dados, conforme imagem abaixo.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+![](Images/jira_4.png)
+
+-Após pesquisar os dados do projeto, clique no icone para exportar os dados para excel, conforme imagem abaixo.
+
+![](Images/jira_5.png)
+
+- Quando aparecer o pop-up perguntando se você permite(allow), clique em permitir a exportação dos dados, conforme imagem abaixo.
+
+![](Images/jira_6.png)
+
+-No próximo pop-up, clique em excel no desktop e o arquivo vai ser baixado na pasta downloads, conforme imagem abaixo.
+
+![](Images/jira_7.png)
+
+
+- Após esse processo, acesso a url: 
+
+[Jira Agile Metrics](https://jira-agile-metrics-web.herokuapp.com/)
+
+- Nomeie o arquivo no campo que aparece na tela
+- Selecione o arquivo que você baixou do jira a
+- Clique em enviar, faça esse processo com todos arquivos que você extraiu do jira e gostaria de exportar os gráficos pela ferramenta
+
+- Após esse processo, é só clicar em gerar arquivos e aguardar
+- Ao clicar em remover arquivos, os arquivos de entrada e saida da ferramentas serão removidos.
+
+**Observações** 
+
+A ferramenta está em sua fase de testes, então você estará utilizando ao mesmo tempo que outros usuários, gerando assim em alguns momentos uma possível concorrência, devemos melhorar essa questão nas próximas versões.
+
+Não nos responsabilizamos e nem armazenamos nenhum tipo de dados histórico sobre os dados que você inserir na ferramenta, pois nosso único intuito e tornar o seu dia melhor e mais fácil, e não nos apropriar dos seus dados, fique ciente que fazemos o que fazemos em prol da comunidade ágil de software.
+
+
