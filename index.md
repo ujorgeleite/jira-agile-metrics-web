@@ -1,7 +1,13 @@
 ## jira-agile-metrics
 
-Essa é uma ferramenta pensada para ajudar pessoas entusiastas sobre métricas ágeis de desenvolvimento de software, foi identificado que no dia a dia, nós que fazemos parte do eco-sistema de desenvolvimento de software e utilizamos a ferramenta JIRA, sempre temos algumas dificuldades de acesso a informações consolidadas de forma prática e gratuita, pensando nisso, visamos facilitar suas analises e apresentações, abstraindo a complexidade burocrática e apoiando na geração de gráfico úteis,
+Essa é uma ferramenta pensada para ajudar pessoas entusiastas sobre métricas ágeis de desenvolvimento de software, foi identificado que no dia a dia, nós que fazemos parte do eco-sistema de desenvolvimento de software e utilizamos a ferramenta JIRA, sempre temos algumas dificuldades de acesso a informações consolidadas de forma prática e gratuita, pensando nisso, visamos facilitar suas analises e apresentações, abstraindo a complexidade burocrática e apoiando na geração de gráfico úteis.
 
+
+### **Disclaimer e Pré-condições**
+
+- A versão desenvolvida contempla a geração de relatórios otimizados para arquivos de entrada no idioma inglês, isso significa que se o sistema operacional do seu computador está em português a ferramenta não vai entregar o relatório proposto, em breve liberaremos uma nova versão com essa possibilidade.
+
+- Pré requisito atual é o sistema da sua máquina estar no idioma inglês
 
 
 ## **Funções habilitadas na ferramenta**
@@ -23,20 +29,20 @@ Essa é uma ferramenta pensada para ajudar pessoas entusiastas sobre métricas �
 
 **Na dropdown selecione todos os itens listados abaixo**
 
--Created
--Issue Type
--Key
--Labels
--Project
--Start date
--Status
--Updated
+- Created
+- Issue Type
+- Key
+- Labels
+- Project
+- Start date
+- Status
+- Updated
 
 - Coloque um filtro na busca pelos dados do projetos que vocês gostaria de exportar os dados, conforme imagem abaixo.
 
 ![](Images/jira_4.png)
 
--Após pesquisar os dados do projeto, clique no icone para exportar os dados para excel, conforme imagem abaixo.
+- Após pesquisar os dados do projeto, clique no icone para exportar os dados para excel, conforme imagem abaixo.
 
 ![](Images/jira_5.png)
 
@@ -44,7 +50,7 @@ Essa é uma ferramenta pensada para ajudar pessoas entusiastas sobre métricas �
 
 ![](Images/jira_6.png)
 
--No próximo pop-up, clique em excel no desktop e o arquivo vai ser baixado na pasta downloads, conforme imagem abaixo.
+- No próximo pop-up, clique em excel no desktop e o arquivo vai ser baixado na pasta downloads, conforme imagem abaixo.
 
 ![](Images/jira_7.png)
 
